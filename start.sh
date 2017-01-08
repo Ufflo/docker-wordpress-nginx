@@ -52,5 +52,8 @@ ENDL
   killall mysqld
 fi
 
+# Fix for when using mounted NFS volumes
+chown -R www-data:www-data /usr/share/nginx/www
+
 # start all the services
 /usr/local/bin/supervisord -n
